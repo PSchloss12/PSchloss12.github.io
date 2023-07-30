@@ -94,6 +94,9 @@
       left: 470px;
       background-color: goldenrod;
     }
+    html {
+        scroll-behavior: smooth;
+    }
     </style>
 
 </head>
@@ -101,7 +104,7 @@
 
 <body style="background-color:#010c26;">
     <!-- Navigation Bar -->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: #11192b; border-bottom: 1px solid wheat;">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="z-index: 1; background-color: #11192b; border-bottom: 1px solid wheat;">
         <div class="navbar-brand">
             <img src="PJS_Logo.png" alt="" width="30" height="30">
             Patrick Schlosser
@@ -121,30 +124,39 @@
         
     <!-- Main Body Text -->
     <br>
-    <h1 style="color: wheat; text-align: center; text-decoration: underline;">Projects and Interests</h1>
+    <h1 style="color: wheat; text-align: center; text-decoration: underline;scroll-margin-top: 60px;" id="home">Projects and Interests</h1>
 
     <!-- Slide Page Naviagation -->
-    <nav class="nav1" style = "border-bottom: 1px solid wheat; border-top: 1px solid wheat;">
+    <nav class="nav1" style = "top: 5px; position: sticky; z-index: 5; border-bottom: 1px solid wheat; border-top: 1px solid wheat;">
         <a href="#home" style="width: 100px;">Home</a>
-        <a href="#industry" style="width: 130px;">Websites</a>
-        <a href="#states" style="width: 120px;">Coming Soon</a>
-        <a href="#sources" style="width: 120px;">Coming Soon</a>
+        <a href="#academcis" style="width: 120px;">Academics</a>
+        <a href="#websites" style="width: 130px;">Websites</a>
+        <a href="#tech" style="width: 120px;">Tech Projects</a>
         <a href="#about" style="width: 110px;">Coming Soon</a>
         <div class="animation start-home"></div>
     </nav>
+    <br>
+
+    <!-- Academic Section -->
+    <h1 style="text-align: center; text-decoration: underline; scroll-margin-top: 60px;" id="academcis">Academics</h1>
 
     <br>
     <hr style="background-color: wheat;">
     <!-- Websites Section-->
-    <h1 style="text-align: center; text-decoration: underline;">Websites</h1>
+    <h1 style="text-align: center; text-decoration: underline;scroll-margin-top: 60px;" id="websites">Websites</h1>
     <br>
     <div class="container">
         <div class="row" style="border-left: 1px solid wheat;">
             <div class="col-sm-8">
                 <h5 style="text-decoration: underline; font-weight: bold;">Programming Paradigms Project</h5>
+                <a href="#" style="color: wheat">Rick and Morty</a>
                 <p>
-                    For this full stack project, I created a Rick and Morty website.
-                    
+                    For this full stack project focused on the Event-based and OOP paradigms,
+                    I created a Rick and Morty website. On the backend, I powered my database with SQLAlchemy
+                    and populated it with data of locations, characters, and episoades from a RESTful API.
+                    I ran my Flask app and exported parsed data to my Flask HTML templates 
+                    using Python. I integrated a Bootstrap responsive desing to create a mobile-first
+                    application, but I only hosted this on a local machine.
                 </p>
             </div>
         </div>
@@ -175,8 +187,11 @@
             </div>
           </div>
     </div>
+
     <hr style="background-color: wheat;">
+
     <!-- Next Section -->
+    <h1 style="text-align: center; text-decoration: underline;scroll-margin-top: 60px;" id="tech">Technical Projects</h1>
 
     <hr style="background-color: wheat;">
 
