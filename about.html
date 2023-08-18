@@ -24,16 +24,12 @@
         p {
             color: gainsboro;
         }
-        .vleft {
+        .lrborder {
             border-left: 1px solid wheat;
-            position:absolute;
-            left: 1%;
-            height: 100%;
-        }
-        .vright {
-            border-left: 1px solid wheat;
-            position:absolute;
+            border-right: 1px solid wheat;
+            position:fixed;
             right: 1%;
+            left: 1%;
             height: 100%;
         }
     </style>
@@ -61,11 +57,10 @@
       </nav>
 
       <!-- Vertical Bars -->
-      <!-- <div class="vleft"></div> -->
-      <!-- <div class="vright"></div> -->
+      <div class="lrborder"></div>
         
     <!-- Main Body Text -->
-    <div class="container vleft vright">
+    <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <br>
