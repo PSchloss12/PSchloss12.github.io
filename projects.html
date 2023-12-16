@@ -26,78 +26,151 @@
         }
 
         .nav1 {
-      margin: 27px auto 0;
-      position: relative;
-      width: 580px;
-      height: 50px;
-      background-color: #11192b;
-      border-radius: 8px;
-      font-size: 0;
-    }
+            margin: 2.5% auto 0;
+            position: relative;
+            width: 38%; /* 15 */
+            height: 50px; /* 2*/
+            background-color: #11192b;
+            border-radius: 8px;
+            font-size: 0;
+        }
         .nav1 a {
-      line-height: 50px;
-      height: 100%;
-      font-size: 15px;
-      display: inline-block;
-      position: relative;
-      z-index: 1;
-      text-decoration: none;
-      text-transform: uppercase;
-      text-align: center;
-      color: gainsboro;
-      cursor: pointer;
-    }
+            line-height: 50px;
+            height: 100%;
+            font-size: 15px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            text-decoration: none;
+            text-transform: uppercase;
+            text-align: center;
+            color: gainsboro;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 1530px) {
+            .nav1 {
+                margin: 2.5% auto 0;
+                position: relative;
+                width: 45%; /* 15 */
+                height: 50px; /* 2*/
+                background-color: #11192b;
+                border-radius: 8px;
+                font-size: 0;
+            }
+            .nav1 a {
+                line-height: 50px;
+                height: 100%;
+                font-size: 14px;
+                display: inline-block;
+                position: relative;
+                z-index: 1;
+                text-decoration: none;
+                text-transform: uppercase;
+                text-align: center;
+                color: gainsboro;
+                cursor: pointer;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            .nav1 {
+                margin: 2.5% auto 0;
+                position: relative;
+                width: 70%; /* 15 */
+                height: 50px; /* 2*/
+                background-color: #11192b;
+                border-radius: 8px;
+                font-size: 0;
+            }
+            .nav1 a {
+                line-height: 50px;
+                height: 100%;
+                font-size: 12px;
+                display: inline-block;
+                position: relative;
+                z-index: 1;
+                text-decoration: none;
+                text-transform: uppercase;
+                text-align: center;
+                color: gainsboro;
+                cursor: pointer;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .nav1 {
+                margin: 2.5% auto 0;
+                position: relative;
+                width: 85%; /* 15 */
+                height: 50px; /* 2*/
+                background-color: #11192b;
+                border-radius: 8px;
+                font-size: 0;
+            }
+            .nav1 a {
+                line-height: 50px;
+                height: 100%;
+                font-size: 10px;
+                display: inline-block;
+                position: relative;
+                z-index: 1;
+                text-decoration: none;
+                text-transform: uppercase;
+                text-align: center;
+                color: gainsboro;
+                cursor: pointer;
+            }
+        }
 
         .nav1 .animation {
-      position: absolute;
-      height: 100%;
-      top: 0;
-      z-index: 0;
-      transition: all .5s ease 0s;
-      border-radius: 8px;
-    }
+        position: absolute;
+        height: 100%;
+        top: 0;
+        z-index: 0;
+        transition: all .5s ease 0s;
+        border-radius: 8px;
+        }
 
-    a:hover {
-      color: #010c26;
-    }
+        a:hover {
+        color: #010c26;
+        }
 
-    .nav1 .start-home,
-    a:nth-child(1):hover~.animation {
-      width: 100px;
-      left: 0;
-      background-color: goldenrod;
-    }
+        .nav1 .start-home,
+        a:nth-child(1):hover~.animation {
+        width: 17%;
+        left: 0;
+        background-color: goldenrod;
+        }
+        .nav1 .start-industry,
+        a:nth-child(2):hover~.animation {
+        width: 20%;
+        left: 16%;
+        background-color: gold;
+        }
+        .nav1 .start-states,
+        a:nth-child(3):hover~.animation {
+        width: 18%;
+        left: 36%;
+        background-color: wheat;
+        }
+        .nav1 .start-sources,
+        a:nth-child(4):hover~.animation {
+        width: 22%;
+        left: 55%;
+        background-color: gold;
+        }
+        .nav1 .start-about,
+        a:nth-child(5):hover~.animation {
+        width: 22%;
+        left: 78%;
+        background-color: goldenrod;
+        }
 
-    .nav1 .start-industry,
-    a:nth-child(2):hover~.animation {
-      width: 130px;
-      left: 100px;
-      background-color: gold;
-    }
 
-    .nav1 .start-states,
-    a:nth-child(3):hover~.animation {
-      width: 120px;
-      left: 230px;
-      background-color: wheat;
-    }
-
-    .nav1 .start-sources,
-    a:nth-child(4):hover~.animation {
-      width: 120px;
-      left: 350px;
-      background-color: gold;
-    }
-
-    .nav1 .start-about,
-    a:nth-child(5):hover~.animation {
-      width: 110px;
-      left: 470px;
-      background-color: goldenrod;
-    }
-    html {
-        scroll-behavior: smooth;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 
 </head>
@@ -129,11 +202,11 @@
 
     <!-- Slide Page Naviagation -->
     <nav class="nav1" style = "top: 5px; position: sticky; z-index: 5; border-bottom: 1px solid wheat; border-top: 1px solid wheat;">
-        <a href="#home" style="width: 100px;">Home</a>
-        <a href="#academcis" style="width: 120px;">Academics</a>
-        <a href="#websites" style="width: 130px;">Websites</a>
-        <a href="#tech" style="width: 120px;">Tech Projects</a>
-        <a href="#leader" style="width: 110px;">Leadership</a>
+        <a href="#home" style="width: 17%;">Home</a>
+        <a href="#academcis" style="width: 19%;">Academics</a>
+        <a href="#websites" style="width: 18%;">Websites</a>
+        <a href="#tech" style="width: 24%;">Tech Projects</a>
+        <a href="#leader" style="width: 22%;">Leadership</a>
         <div class="animation"></div>
     </nav>
     <br>
