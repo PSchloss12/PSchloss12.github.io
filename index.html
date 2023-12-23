@@ -24,6 +24,9 @@
         p {
             color: gainsboro;
         }
+        #patrick{
+          transition: transform 0.5s ease-in-out, font-size 0.5s ease-in-out;
+        }
     </style>
 
 </head>
@@ -57,7 +60,7 @@
             <br><br>
             <h5>I am</h5>
             <br>
-            <h1 style="font-size: 84px; color: azure;">Patrick Schlosser</h1>
+            <h1 id="patrick" data-target-resolver onmouseover="expand()" style="font-size: 84px; color: azure;">Patrick Schlosser</h1>
             <br>
             <h5>
                 a Computer Science and Engineering student at the University of Notre Dame 
@@ -89,4 +92,146 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>  
+      const title = document.getElementById('patrick');
+  
+      // Click event listener
+      title.addEventListener('click', function () {
+        // Increase font size on click
+        title.style.fontSize = "110px";
+
+        // Reset font size after a delay
+        setTimeout(() => {
+          title.style.fontSize = "84px";
+          title.style.transform = 'rotateX(0deg)'
+        }, 200);
+      });
+
+      function expand(){
+        // Increase font size on scroll
+        title.style.fontSize = "94px";
+
+        // Reset font size after a delay
+        setTimeout(() => {
+          title.style.fontSize = "84px";
+        }, 100);
+      }
+
+      const resolver = {
+        resolve: function resolve(options, callback) {
+          // The string to resolve
+          const resolveString = options.resolveString || options.element.getAttribute('data-target-resolver');
+          const combinedOptions = Object.assign({}, options, {
+              resolveString: resolveString
+          });
+
+          function getRandomInteger(min, max) {
+              return Math.floor(Math.random() * (max - min + 1)) + min;
+          };
+
+          function randomCharacter(characters) {
+              return characters[getRandomInteger(0, characters.length - 1)];
+          };
+
+          function doRandomiserEffect(options, callback) {
+              const characters = options.characters;
+              const timeout = options.timeout;
+              const element = options.element;
+              const partialString = options.partialString;
+
+              let iterations = options.iterations;
+
+              setTimeout(() => {
+                  if (iterations >= 0) {
+                      const nextOptions = Object.assign({}, options, {
+                          iterations: iterations - 1
+                      });
+
+                      // Ensures partialString without the random character as the final state.
+                      if (iterations === 0) {
+                          element.textContent = partialString;
+                      } else {
+                          // Replaces the last character of partialString with a random character
+                          element.textContent = partialString.substring(0, partialString.length - 1) + randomCharacter(characters);
+                      }
+
+                      doRandomiserEffect(nextOptions, callback);
+                  } else if (typeof callback === "function") {
+                      callback();
+                  }
+              }, options.timeout);
+          };
+
+          function doResolverEffect(options, callback) {
+              const resolveString = options.resolveString;
+              const characters = options.characters;
+              const offset = options.offset;
+              const partialString = resolveString.substring(0, offset);
+              const combinedOptions = Object.assign({}, options, {
+                  partialString: partialString
+              });
+
+              doRandomiserEffect(combinedOptions, () => {
+                  const nextOptions = Object.assign({}, options, {
+                      offset: offset + 1
+                  });
+
+                  if (offset <= resolveString.length) {
+                      doResolverEffect(nextOptions, callback);
+                  } else if (typeof callback === "function") {
+                      callback();
+                  }
+              });
+          };
+
+          doResolverEffect(combinedOptions, callback);
+          }
+      };
+
+
+        const strings = [
+            '>>> a_developer',
+            'An Engineer',
+            '☘Irish☘',
+            'Patrick Schlosser'
+        ];
+
+
+        let counter = 0;
+
+        const options = {
+            // Initial position
+            offset: 0,
+            // Timeout between each random character
+            timeout: 5,
+            // Number of random characters to show
+            iterations: 10,
+            // Random characters to pick from
+            characters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'x', '#', '%', '&', '-', '+', '_', '?', '!', '$', '='],
+            // String to resolve
+            resolveString: strings[counter],
+            // The element
+            element: document.querySelector('[data-target-resolver]')
+        };
+
+
+        // Callback function when resolve completes
+        function callback() {
+            setTimeout(() => {
+                counter++;
+                
+                if (counter >= strings.length) {
+                    counter = 0;
+                }
+                if (counter<strings.length){
+                  let nextOptions = Object.assign({}, options, {
+                      resolveString: strings[counter]
+                  });
+                  resolver.resolve(nextOptions, callback);
+                }
+            }, counter == strings.length-1 ? 6000 : 300);
+        }
+
+      resolver.resolve(options, callback);
+    </script>
 </body>
