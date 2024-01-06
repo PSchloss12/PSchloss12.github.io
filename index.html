@@ -16,13 +16,14 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"></script>
     <!-- SVG Icons -->
     <script type="module">
-        import { registerIconLibrary } from 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/dist/utilities/icon-library.js';
+        import { registerIconLibrary } from '/dist/utilities/icon-library.js';
       
         registerIconLibrary('my-icons', {
-          resolver: name => `${name}.svg`,
+          resolver: name => ".\\icons\\${name}.svg",
           mutator: svg => svg.setAttribute('fill', 'currentColor')
         });
     </script>
+      
 
     <!-- Custom CSS -->
     <style>
@@ -92,6 +93,9 @@
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
                 <sl-icon src="C:\Users\12625\Desktop\Code\personal_website\java_logo.svg" style="font-size: 1rem;"></sl-icon>
+                <!-- This will show the icon located at /assets/icons/smile.svg -->
+                <sl-icon library="my-icons" name="python_icon"></sl-icon>
+
                 <a target="_blank" href="https://www.python.org/">
                     <sl-icon src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg" style="font-size: 2rem;"></sl-icon>
                 </a>
@@ -267,7 +271,7 @@
 
         const options = {
             // Initial position
-            offset: 0,
+            offset: 1,
             // Timeout between each random character
             timeout: 1,
             // Number of random characters to show
