@@ -16,11 +16,10 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.12.0/cdn/shoelace-autoloader.js"></script>
     <!-- SVG Icons -->
     <script type="module">
-        import { registerIconLibrary } from '/dist/utilities/icon-library.js';
-      
+        import { registerIconLibrary } from 'https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.5.2/cdn/utilities/icon-library.js';
+
         registerIconLibrary('my-icons', {
-          resolver: name => ".\\icons\\${name}.svg",
-          mutator: svg => svg.setAttribute('fill', 'currentColor')
+          resolver: name => 'https://raw.githubusercontent.com/PSchloss12/PSchloss12.github.io/main/icons/${name}.svg',
         });
     </script>
 
@@ -86,12 +85,11 @@
           </div>
         </div>
         <br><br><br><br>
-
+        
         <!-- Logos -->
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-7">
-                <sl-icon src="C:\Users\12625\Desktop\Code\personal_website\java_logo.svg" style="font-size: 1rem;"></sl-icon>
                 <!-- This will show the icon located at /assets/icons/smile.svg -->
                 <!-- <sl-icon library="my-icons" name="python_icon"></sl-icon> -->
                 <sl-icon src=""style="font-size: 2rem;"></sl-icon>
@@ -124,11 +122,11 @@
                     <sl-icon src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Sql_data_base_with_logo.svg" style="font-size: 2rem;"></sl-icon>
                 </a>
                 <!-- IDK why this isn't working as an icon -->
-                <a target="_blank" style="align-self: center;" href="https://learn.microsoft.com/en-us/office/vba/library-reference/concepts/getting-started-with-vba-in-office">
-                    <!-- <sl-icon src="https://gistcdn.githack.com/PSchloss12/26c3320c37d533c410814eb6a4ab5072/raw/db162640fdc33bbc54d8cce986d93964fb466887/vba.svg" style="font-size: 2rem;"></sl-icon> -->
-                    <img src="https://gistcdn.githack.com/PSchloss12/26c3320c37d533c410814eb6a4ab5072/raw/db162640fdc33bbc54d8cce986d93964fb466887/vba.svg" style="position: absolute; top:0%; width:5%; height: 85%"></img>
-                </a>
-                <sl-icon src=""style="font-size: 2rem;"></sl-icon>
+                <!-- <a target="_blank" style="align-self: center;" href="https://learn.microsoft.com/en-us/office/vba/library-reference/concepts/getting-started-with-vba-in-office"> -->
+                    <!-- <sl-icon src="https://raw.githubusercontent.com/PSchloss12/PSchloss12.github.io/main/icons/vba.svg" style="font-size: 2rem"></sl-icon> -->
+                    <!-- <img src="https://raw.githubusercontent.com/PSchloss12/PSchloss12.github.io/main/icons/vba.svg" style="font-size: 2rem"></img> -->
+                    <!-- <sl-icon library="my-icons" name="python"></sl-icon> -->
+                <!-- </a> -->
                 <a target="_blank" href="https://www.mysql.com/">
                     <sl-icon src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg" style="font-size: 2rem;"></sl-icon>
                 </a>
