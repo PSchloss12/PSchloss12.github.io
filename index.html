@@ -121,9 +121,9 @@
                 <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
                     <sl-icon src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" style="font-size: 2rem;"></sl-icon>
                 </a>
-                <!-- <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+                <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
                     <sl-icon src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Typescript.svg" style="font-size: 2rem;"></sl-icon>
-                </a> -->
+                </a>
                 <a target="_blank" href="https://aws.amazon.com/what-is/sql/#:~:text=Structured%20query%20language%20(SQL)%20is,relationships%20between%20the%20data%20values.">
                     <sl-icon src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Sql_data_base_with_logo.svg" style="font-size: 2rem;"></sl-icon>
                 </a>
@@ -173,30 +173,6 @@
 
     <!-- Text reveal -->
     <script>  
-      const title = document.getElementById('patrick');
-  
-      // Click event listener
-      title.addEventListener('click', function () {
-        // Increase font size on click
-        title.style.fontSize = "110px";
-
-        // Reset font size after a delay
-        setTimeout(() => {
-          title.style.fontSize = "84px";
-          title.style.transform = 'rotateX(0deg)'
-        }, 200);
-      });
-
-      function expand(){
-        // Increase font size on scroll
-        title.style.fontSize = "94px";
-
-        // Reset font size after a delay
-        setTimeout(() => {
-          title.style.fontSize = "84px";
-        }, 100);
-      }
-
       const resolver = {
         resolve: function resolve(options, callback) {
           // The string to resolve
@@ -287,7 +263,7 @@
             // Number of random characters to show
             iterations: 10,
             // Random characters to pick from
-            characters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'x', '#', '%', '&', '-', '+', '_', '?', '!', '$', '='],
+            characters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'x', '&', '-', '+', '_', '?', '!', '$', '=', '>'],
             // String to resolve
             resolveString: strings[counter],
             // The element
